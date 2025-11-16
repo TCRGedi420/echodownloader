@@ -1,6 +1,6 @@
 # EchoDownloader - YouTube Playlist Downloader
 
-[cloudflarebutton]
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/TCRGedi420/echodownloader)
 
 EchoDownloader is a visually stunning and intuitive web application designed for personal and educational use, allowing users to fetch YouTube playlists and simulate downloading them in various audio or video formats. The application features a clean, modern interface with a single input for a YouTube playlist URL. Upon fetching, it displays a detailed list of all videos in the playlist, including thumbnails, titles, and durations.
 
@@ -78,7 +78,7 @@ This command will build the application and deploy it to your Cloudflare account
 
 Alternatively, you can deploy directly from your GitHub repository using the button below.
 
-[cloudflarebutton]
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/TCRGedi420/echodownloader)
 
 ## Disclaimer
 
