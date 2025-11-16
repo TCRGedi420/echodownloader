@@ -232,9 +232,11 @@ function Disclaimer() {
 // Download Queue Section Component
 function DownloadQueueSection() {
     const downloadQueue = useDownloaderStore((s) => s.downloadQueue);
+    const activeDownloadCount = downloadQueue.filter(item => item.status === 'queued' || item.status === 'processing').length;
+
     useEffect(() => {
-        const activeDownloads = downloadQueue.filter(item => item.status === 'queued' || item.status === 'processing');
-        if (activeDownloads.length > 0) {
+        if (activeDownloadCount > 0) {
+            const activeDownloads = useDownloaderStore.getState().downloadQueue.filter(item => item.status === 'queued' || item.status === 'processing');
             const interval = setInterval(() => {
                 activeDownloads.forEach(item => {
                     if (item.status === 'processing' && item.progress < 100) {
@@ -251,7 +253,7 @@ function DownloadQueueSection() {
             }, 500);
             return () => clearInterval(interval);
         }
-    }, [downloadQueue]);
+    }, [activeDownloadCount]);
     if (downloadQueue.length === 0) return null;
     return (
         <motion.section 
